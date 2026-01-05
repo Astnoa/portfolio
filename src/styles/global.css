@@ -1,0 +1,42 @@
+:root {
+    --bg: #101215;
+    --bg-elev: #171a20;
+    --fg-primary: #d8dbe2;
+    --fg-muted: #8c919f;
+    --accent: #7f8fa6;
+    --border: rgba(255, 255, 255, 0.08);
+    --card-width: 800px;
+    --radius: 12px;
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--fg-primary);
+}
+
+/* Subtle repeating background pattern */
+body {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 16px 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+}
