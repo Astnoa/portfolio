@@ -13,12 +13,14 @@ const { title = "default"} = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/">Blog</a>
-        </nav>
-        <main>
-            <slot />
-        </main>
+        <div class="container">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/">Blog</a>
+            </nav>
+            <main>
+                <slot />
+            </main>
+        </div>
     </body>
 </html>

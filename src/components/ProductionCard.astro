@@ -1,28 +1,34 @@
 ---
+import {Icon} from "astro-icon/components";
 interface Props {
   image: string;
   title: string;
   year: string;
   role: string;
   company: string;
+  href: string;
 }
 
-const { image, title, year, role, company } = Astro.props;
+const { image, title, year, role, company, href } = Astro.props;
 ---
-
-<div class="production-card">
-  <div class="image-container">
-    <img src={image} alt={title} />
+<a href={href}>
+  <div class="production-card">
+    <div class="image-container">
+      <img src={image} alt={title} />
+    </div>
+    <div class="info">
+      <h3 class="title">{title}</h3>
+      <p class="year">{year}</p>
+      <p class="role">{role}</p>
+      <p class="company">{company}</p>
+    </div>
   </div>
-  <div class="info">
-    <h3 class="title">{title}</h3>
-    <p class="year">{year}</p>
-    <p class="role">{role}</p>
-    <p class="company">{company}</p>
-  </div>
-</div>
-
+</a>
 <style>
+  a {
+    text-decoration: none;
+  }
+
   .production-card {
     background-color: var(--bg-elev);
     border: 1px solid var(--border);
@@ -34,7 +40,7 @@ const { image, title, year, role, company } = Astro.props;
   }
 
   .production-card:hover {
-    border-color: var(--accent);
+    border-color: var(--border-highlight);
     transform: translateY(-4px);
   }
 
