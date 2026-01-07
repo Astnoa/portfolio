@@ -15,8 +15,8 @@ const { title = "default"} = Astro.props;
     <body>
         <div class="container">
             <nav>
-                <a href="/">Home</a>
-                <a href="/">Blog</a>
+                <a href="/" class={Astro.url.pathname === "/" ? "active" : ""}>Home</a>
+                <a href="/blog" class={Astro.url.pathname === "/blog" ? "active" : ""}>Blog</a>
             </nav>
             <main>
                 <slot />

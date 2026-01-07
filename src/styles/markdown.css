@@ -1,0 +1,109 @@
+.markdown-content h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--fg-primary);
+}
+
+.markdown-content h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--fg-primary);
+}
+
+.markdown-content h3 {
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--fg-primary);
+}
+
+.markdown-content p {
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    color: var(--fg-muted);
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    color: var(--fg-muted);
+}
+
+.markdown-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.markdown-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    color: var(--fg-muted);
+}
+
+.markdown-content code {
+    background-color: var(--bg-elev);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.markdown-content pre {
+    background-color: var(--bg-elev);
+    padding: 1rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+}
+
+.markdown-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Handle markdown-generated paragraphs wrapping images */
+.gallery p {
+    display: contents;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    //aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: zoom-in;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border);
+    margin-bottom: 0; /* Reset markdown img margin */
+}
+
+.gallery img:hover {
+    border-color: var(--border-highlight);
+    transform: translateY(-2px);
+}
