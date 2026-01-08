@@ -1,11 +1,21 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import ProductionHeader from "../components/ProductionHeader.astro";
 import "../styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
+  <ProductionHeader 
+    title={frontmatter.title}
+    year={frontmatter.year}
+    role={frontmatter.role}
+    company={frontmatter.company}
+    image={frontmatter.image}
+    platforms={frontmatter.platforms}
+    software={frontmatter.software}
+  />
   <article class="markdown-content">
     <slot />
   </article>

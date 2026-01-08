@@ -41,7 +41,13 @@ body {
     width: 100%;
     max-width: var(--body-width);
     margin: 0 auto;
-    padding: 0 2rem 4rem;
+    padding: 0 1.5rem 4rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem 3rem;
+    }
 }
 
 nav {

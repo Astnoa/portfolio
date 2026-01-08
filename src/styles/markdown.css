@@ -1,10 +1,5 @@
 .markdown-content h1 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-    color: var(--fg-primary);
+    display: none;
 }
 
 .markdown-content h2 {
@@ -12,8 +7,16 @@
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-highlight);
     color: var(--fg-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 620px) {
+    .markdown-content h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .markdown-content h3 {
@@ -21,7 +24,7 @@
     margin-top: 1.25rem;
     margin-bottom: 0.75rem;
     padding-bottom: 0.2rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-highlight);
     color: var(--fg-primary);
 }
 
@@ -42,11 +45,17 @@
     line-height: 1.6;
 }
 
-.markdown-content img {
+.markdown-content img,
+.markdown-content iframe {
     max-width: 100%;
     height: auto;
     border-radius: var(--radius);
     margin-bottom: 1.5rem;
+}
+
+.markdown-content iframe {
+    aspect-ratio: 16 / 9;
+    border: 0;
 }
 
 .markdown-content blockquote {
@@ -80,10 +89,16 @@
 /* Gallery styles */
 .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Handle markdown-generated paragraphs wrapping images */
@@ -91,19 +106,24 @@
     display: contents;
 }
 
-.gallery img {
+.gallery img,
+.gallery iframe {
     width: 100%;
     height: auto;
-    //aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 8px;
-    cursor: zoom-in;
-    transition: all 0.2s ease;
     border: 1px solid var(--border);
     margin-bottom: 0; /* Reset markdown img margin */
+    transition: all 0.2s ease;
 }
 
-.gallery img:hover {
+.gallery img {
+    cursor: zoom-in;
+}
+
+.gallery img:hover,
+.gallery iframe:hover {
     border-color: var(--border-highlight);
     transform: translateY(-2px);
 }
