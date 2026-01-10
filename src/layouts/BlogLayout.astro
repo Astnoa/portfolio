@@ -1,0 +1,104 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/markdown.css";
+
+const { frontmatter } = Astro.props;
+const {
+  title = "Untitled Post",
+  date = "2000-01-01",
+  author = "Flore Vanackere",
+} = frontmatter;
+---
+
+<BaseLayout title={title}>
+  <div class="blog-header">
+    <h1 class="title">{title}</h1>
+    <div class="metadata">
+      {date && <span class="date">{date}</span>}
+      {date && author && <span class="dot">•</span>}
+      {author && <span class="author">{author}</span>}
+    </div>
+  </div>
+
+  <article class="markdown-content">
+    <slot />
+  </article>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const allImages = document.querySelectorAll('.markdown-content img');
+
+    allImages.forEach(img => {
+      // Don't add lightbox if the image is inside a link
+      if (img.closest('a')) return;
+
+      img.addEventListener('click', () => {
+        lightboxImg.src = (img as HTMLImageElement).src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      });
+    });
+
+    lightbox?.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .blog-header {
+    background-color: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--fg-primary);
+    margin: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .metadata {
+    font-size: 1rem;
+    color: var(--fg-muted);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dot {
+    opacity: 0.5;
+  }
+
+  @media (max-width: 620px) {
+    .blog-header {
+      padding: 1.5rem;
+    }
+
+    .title {
+      font-size: 1.8rem;
+    }
+  }
+</style>

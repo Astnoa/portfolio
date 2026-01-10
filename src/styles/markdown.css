@@ -1,5 +1,12 @@
 .markdown-content h1 {
-    display: none;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border-highlight);
+    color: var(--fg-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .markdown-content h2 {
@@ -50,12 +57,21 @@
     max-width: 100%;
     height: auto;
     border-radius: var(--radius);
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .markdown-content iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     aspect-ratio: 16 / 9;
     border: 0;
+}
+
+.markdown-content hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid var(--border-highlight);
 }
 
 .markdown-content blockquote {
@@ -95,35 +111,99 @@
     margin-bottom: 2rem;
 }
 
+.gallery-dynamic {
+    column-count: 2;
+    column-gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Ensure the first items in each column are top-aligned by resetting margins and ensuring block display */
+.gallery-dynamic > *:first-child,
+.gallery-dynamic > p:first-child > *:first-child {
+    margin-top: 0;
+}
+
+/* Fix for top alignment in column-count */
+.gallery-dynamic::before {
+    content: "";
+    display: block;
+    grid-column: 1 / -1;
+    height: 0;
+    margin-bottom: -1rem; /* Offset the margin-bottom of potential items if needed, but mainly to stabilize */
+}
+
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr;
     }
+    .gallery-dynamic {
+        column-count: 1;
+    }
 }
 
 /* Handle markdown-generated paragraphs wrapping images */
-.gallery p {
+.gallery p, .gallery-dynamic p {
     display: contents;
 }
 
 .gallery img,
-.gallery iframe {
+.gallery iframe,
+.gallery-dynamic img,
+.gallery-dynamic iframe {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--border);
     margin-bottom: 0; /* Reset markdown img margin */
     transition: all 0.2s ease;
 }
 
-.gallery img {
+.gallery-dynamic img,
+.gallery-dynamic iframe {
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    display: block;
+    margin-top: 0;
+    vertical-align: top;
+}
+
+/* Force first items in columns to align to top */
+.gallery-dynamic > *:first-child {
+    margin-top: 0;
+}
+
+.gallery img,
+.gallery-dynamic img,
+.markdown-content img {
     cursor: zoom-in;
 }
 
+/* Exclude images within links from lightbox cursor and hover effect */
+.markdown-content a img {
+    cursor: pointer;
+}
+
 .gallery img:hover,
-.gallery iframe:hover {
+.gallery iframe:hover,
+.gallery-dynamic img:hover,
+.gallery-dynamic iframe:hover,
+.markdown-content img:hover {
     border-color: var(--border-highlight);
     transform: translateY(-2px);
+}
+
+.markdown-content a img:hover {
+    transform: none;
+}
+
+.gallery img,
+.gallery iframe {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.gallery-dynamic img,
+.gallery-dynamic iframe {
+    object-fit: contain;
 }

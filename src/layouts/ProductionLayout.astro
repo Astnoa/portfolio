@@ -28,9 +28,12 @@ const { frontmatter } = Astro.props;
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-    const galleryImages = document.querySelectorAll('.gallery img');
+    const allImages = document.querySelectorAll('.markdown-content img');
 
-    galleryImages.forEach(img => {
+    allImages.forEach(img => {
+      // Don't add lightbox if the image is inside a link
+      if (img.closest('a')) return;
+
       img.addEventListener('click', () => {
         lightboxImg.src = (img as HTMLImageElement).src;
         lightbox.classList.add('active');

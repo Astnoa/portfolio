@@ -19,16 +19,16 @@ One of the larger assignments I received was creating a modular bridge. This was
 Overall my internship was a very interesting experience and I learned a lot of new things from my collegues, and about the production pipeline.
 
 <div class="gallery">
-  <img src="/images/dos2/flore-vanackere-larian-internship-presentation-124.jpg" alt="DOS2 Screenshot 01" />
-  <img src="/images/dos2/flore-vanackere-larian-internship-presentation-126.jpg" alt="DOS2 Screenshot 02" />
-  <img src="/images/dos2/flore-vanackere-larian-internship-presentation-128.jpg" alt="DOS2 Screenshot 03" />
-  <img src="/images/dos2/flore-vanackere-larian-internship-presentation-132.jpg" alt="DOS2 Screenshot 04" />
+  <img src="/images/productions/dos2/flore-vanackere-larian-internship-presentation-124.jpg" alt="DOS2 Screenshot 01" />
+  <img src="/images/productions/dos2/flore-vanackere-larian-internship-presentation-126.jpg" alt="DOS2 Screenshot 02" />
+  <img src="/images/productions/dos2/flore-vanackere-larian-internship-presentation-128.jpg" alt="DOS2 Screenshot 03" />
+  <img src="/images/productions/dos2/flore-vanackere-larian-internship-presentation-132.jpg" alt="DOS2 Screenshot 04" />
 </div>
 
 This is the art test I had to make based of concept art:
 
 <div class="gallery">
-  <img src="/images/dos2/flore-vanackere-000.jpg" alt="Art test Screenshot 01" />
-  <img src="/images/dos2/flore-vanackere-001.jpg" alt="Art test Screenshot 02" />
-  <img src="/images/dos2/flore-vanackere-002.jpg" alt="Art test Screenshot 03" />
+  <img src="/images/productions/dos2/flore-vanackere-000.jpg" alt="Art test Screenshot 01" />
+  <img src="/images/productions/dos2/flore-vanackere-001.jpg" alt="Art test Screenshot 02" />
+  <img src="/images/productions/dos2/flore-vanackere-002.jpg" alt="Art test Screenshot 03" />
 </div>
