@@ -14,7 +14,7 @@ const {
 <BaseLayout title={title}>
   <div class="blog-header">
     <h1 class="title">{title}</h1>
-    {description && <p class="description">{description}</p>}
+    {description && <p hidden class="description">{description}</p>}
     <div class="metadata">
       {date && <span class="date">{date}</span>}
       {date && author && <span class="dot">•</span>}

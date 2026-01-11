@@ -108,4 +108,5 @@ Further down, where the production grid is rendered, only a few lines are needed
 ## Conclusion
 I think I’ve rattled on long enough. In any case, I love that I can call this website my own again. There is something satisfying about stripping things back to fundamentals and understanding every part of how it works, rather than relying on subscription-based platforms and opaque systems. And that goes for al lot of things beyond building a personal website.
 
-For now, this site does what I need it to do: it showcases my work, gives me space to experiment, and acts as a place where I can write and share without worrying about algorithms, platform rules, or monthly fees. That feels like a good foundation to build on.
+For now, this site does what I need it to do: it showcases my work, gives me space to experiment, and acts as a place where I can write and share without worrying about algorithms, platform rules, or monthly fees. That feels like a good foundation to build on.  
+
