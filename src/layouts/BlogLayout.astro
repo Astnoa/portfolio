@@ -7,12 +7,14 @@ const {
   title = "Untitled Post",
   date = "2000-01-01",
   author = "Flore Vanackere",
+  description
 } = frontmatter;
 ---
 
 <BaseLayout title={title}>
   <div class="blog-header">
     <h1 class="title">{title}</h1>
+    {description && <p class="description">{description}</p>}
     <div class="metadata">
       {date && <span class="date">{date}</span>}
       {date && author && <span class="dot">•</span>}
@@ -77,6 +79,17 @@ const {
     margin: 0;
     margin-bottom: 0.5rem;
     line-height: 1.2;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    color: var(--fg-muted);
+    margin: 0;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
   }
 
   .metadata {

@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/BlogLayout.astro"
 title: "Shinrin: Tactical Turn Based Combat"
+description: "Exploring pathfinding and tactical combat systems in an Unreal Engine 4 prototype project."
 date: "2019-12-13"
 author: "Flore Vanackere"
 thumbnail: "/images/blog-posts/191213-shinrin/035.jpg"

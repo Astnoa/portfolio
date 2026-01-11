@@ -7,7 +7,7 @@ const { title = "default"} = Astro.props;
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="images/Favicon.png" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
@@ -21,6 +21,20 @@ const { title = "default"} = Astro.props;
             <main>
                 <slot />
             </main>
+            <footer>
+                <p>&copy; {new Date().getFullYear()} Flore Vanackere. Built with Astro.</p>
+            </footer>
         </div>
     </body>
 </html>
+
+<style>
+    footer {
+        text-align: center;
+        padding: 3rem 0 2rem;
+        border-top: 1px solid var(--border);
+        margin-top: 4rem;
+        color: var(--fg-muted);
+        font-size: 0.9rem;
+    }
+</style>

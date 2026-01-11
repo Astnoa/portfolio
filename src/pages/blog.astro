@@ -9,7 +9,7 @@ posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.d
   <div class="blog-container">
     <div class="header">
       <h1 class="page-title">Blog</h1>
-      <p class="page-description">Thoughts, process, and updates on my work.</p>
+      <p class="page-description">Thoughts, breakdowns, and updates on my personal work.</p>
     </div>
 
     <div class="posts-list">
@@ -36,7 +36,7 @@ posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.d
                 {author && <span class="dot">•</span>}
                 {author && <span class="author">{author}</span>}
               </div>
-              {description && <p class="post-description">{description}</p>}
+              {description && <p hidden class="post-description">{description}</p>}
             </div>
           </a>
         );
@@ -136,6 +136,8 @@ posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.d
     color: var(--fg-muted);
     line-height: 1.5;
     margin: 0;
+    font-size: 0.95rem;
+    font-style: italic;
   }
 
   .subtle-card {

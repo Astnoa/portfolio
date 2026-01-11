@@ -1,6 +1,7 @@
 ---
 layout: "../../layouts/BlogLayout.astro"
 title: "Houdini Lego Tool"
+description: "A deep dive into creating a procedural Lego brick generator in Houdini."
 date: "2019-12-14"
 author: "Flore Vanackere"
 thumbnail: "/images/blog-posts/191214-houdini-lego/Thumbnail.png"
