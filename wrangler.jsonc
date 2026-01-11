@@ -3,7 +3,7 @@
   "compatibility_date": "2026-01-07", // Update to the day you deploy
   "assets": {
     "directory": "./dist"
-  }
+  },
   "routes": [
     {
       "pattern": "florevanackere.com",
