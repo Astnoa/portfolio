@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogLayout.astro"
-title: "Cosplaying as a full stack developer"
+title: "Cosplaying as a Full Stack Developer"
 description: "Why I decided to ditch Squarespace and build my own portfolio from scratch using Astro."
 date: "2026-01-10"
 author: "Flore Vanackere"
